@@ -1,6 +1,6 @@
-package com.deckofcards.adapter.http.dto;
+package com.deckofcards.adapter.http.dto.response;
 
-import com.deckofcards.adapter.gateway.dto.CardResponse;
+import com.deckofcards.adapter.gateway.dto.cards.CardResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

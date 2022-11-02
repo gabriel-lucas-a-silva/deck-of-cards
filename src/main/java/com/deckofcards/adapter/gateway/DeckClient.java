@@ -1,6 +1,6 @@
 package com.deckofcards.adapter.gateway;
 
-import com.deckofcards.adapter.gateway.dto.CardsResponse;
+import com.deckofcards.adapter.gateway.dto.cards.CardsResponse;
 import com.deckofcards.adapter.gateway.dto.DeckResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

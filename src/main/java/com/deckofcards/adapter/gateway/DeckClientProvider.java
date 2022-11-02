@@ -1,7 +1,7 @@
 package com.deckofcards.adapter.gateway;
 
-import com.deckofcards.adapter.gateway.dto.CardsResponse;
 import com.deckofcards.adapter.gateway.dto.DeckResponse;
+import com.deckofcards.adapter.gateway.dto.cards.CardsResponse;
 import com.deckofcards.entities.DeckEntity;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,8 +23,8 @@ public class DeckClientProvider {
     }
 
     public DeckEntity drawCards(final DeckEntity deck) {
-        log.info("Drawing cards to deck id: [{}]", deck.getDeckId());
-        final var cards = deckClient.drawCard(deck.getDeckId(), NUMBER_OF_CARDS);
+        log.info("Drawing cards to deck id: [{}]", deck.getId());
+        final var cards = deckClient.drawCard(deck.getId(), NUMBER_OF_CARDS);
         final var cardsAsEntities = CardsResponse.toEntity(cards, deck);
 
         log.info("Cards drawn with success.");

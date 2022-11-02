@@ -13,10 +13,10 @@ public class DeckDbProvider {
     private final DeckRepositoryH2Db deckRepositoryH2Db;
 
     public DeckEntity save(final DeckEntity deck) {
-        log.info("Saving deck in database. deck id: [{}]", deck.getDeckId());
+        log.info("Saving deck in database. deck id: [{}]", deck.getId());
         final var savedDeck = deckRepositoryH2Db.save(deck);
 
-        log.info("Deck was saved in the database with success. deck id: [{}]", savedDeck.getDeckId());
+        log.info("Deck was saved in the database with success. deck id: [{}]", savedDeck.getId());
         return savedDeck;
     }
 }

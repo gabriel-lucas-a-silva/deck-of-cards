@@ -1,5 +1,6 @@
 package com.deckofcards.adapter.gateway.dto;
 
+import com.deckofcards.adapter.gateway.dto.cards.CardResponse;
 import com.deckofcards.entities.CardEntity;
 import com.deckofcards.entities.DeckEntity;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
@@ -22,13 +23,13 @@ public class DeckResponse {
 
     public static DeckEntity toEntity(final DeckResponse deck) {
         return DeckEntity.builder()
-                .deckId(deck.getDeckId())
+                .id(deck.getDeckId())
                 .build();
     }
 
     public static DeckEntity toEntity(final DeckEntity deck, final List<CardEntity> cards) {
         return DeckEntity.builder()
-                .deckId(deck.getDeckId())
+                .id(deck.getId())
                 .cards(cards)
                 .build();
     }
