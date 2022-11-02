@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: Deck-of-Cards
+  datasource:
+    driverClassName: org.h2.Driver
+    url: ${H2DB_URL:jdbc:h2:mem:deck-of-cards}
+    username: ${H2DB_USERNAME:admin}
+    password: ${H2DB_PASSWORD:}
+  jpa:
+    database-plataform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+
+deck:
+  name: Deck
+  url: ${DECK_API_URL:https://deckofcardsapi.com/api/deck}
