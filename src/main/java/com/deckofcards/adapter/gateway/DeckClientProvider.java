@@ -1,0 +1,33 @@
+package com.deckofcards.adapter.gateway;
+
+import com.deckofcards.adapter.gateway.dto.CardsResponse;
+import com.deckofcards.adapter.gateway.dto.DeckResponse;
+import com.deckofcards.entities.DeckEntity;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+@Slf4j
+@Service
+@AllArgsConstructor
+public class DeckClientProvider {
+    private final static int NUMBER_OF_CARDS = 20;
+    private final DeckClient deckClient;
+
+    public DeckEntity createDeck() {
+        log.info("Creating a new deck.");
+        final var deck = deckClient.createDeck();
+
+        log.info("New deck created with success. deck id: [{}]", deck.getDeckId());
+        return DeckResponse.toEntity(deck);
+    }
+
+    public DeckEntity drawCards(final DeckEntity deck) {
+        log.info("Drawing cards to deck id: [{}]", deck.getDeckId());
+        final var cards = deckClient.drawCard(deck.getDeckId(), NUMBER_OF_CARDS);
+        final var cardsAsEntities = CardsResponse.toEntity(cards, deck);
+
+        log.info("Cards drawn with success.");
+        return DeckResponse.toEntity(deck, cardsAsEntities);
+    }
+}
