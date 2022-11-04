@@ -1,7 +1,7 @@
 package com.deckofcards.usecases;
 
 import com.deckofcards.adapter.gateway.DeckClientProvider;
-import com.deckofcards.adapter.http.dto.DeckResponseDTO;
+import com.deckofcards.adapter.http.dto.response.DeckResponseDTO;
 import com.deckofcards.adapter.repository.provider.DeckDbProvider;
 import com.deckofcards.entities.DeckEntity;
 import lombok.AllArgsConstructor;

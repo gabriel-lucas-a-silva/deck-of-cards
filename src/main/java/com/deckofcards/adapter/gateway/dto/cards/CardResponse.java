@@ -1,4 +1,4 @@
-package com.deckofcards.adapter.gateway.dto;
+package com.deckofcards.adapter.gateway.dto.cards;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

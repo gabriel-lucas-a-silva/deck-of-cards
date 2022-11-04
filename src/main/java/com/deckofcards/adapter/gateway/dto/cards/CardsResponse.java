@@ -1,4 +1,4 @@
-package com.deckofcards.adapter.gateway.dto;
+package com.deckofcards.adapter.gateway.dto.cards;
 
 import com.deckofcards.entities.CardEntity;
 import com.deckofcards.entities.DeckEntity;
