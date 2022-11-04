@@ -37,7 +37,7 @@ public class BuildHands {
                 playerNumber--;
             }
 
-            playersCards.add(card.getCode());
+            playersCards.add(card.getValue());
         }
 
         log.info("Players' hands built. {}", players);
